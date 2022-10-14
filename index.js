@@ -1,6 +1,12 @@
+const path = require('path');
 const express = require('express');
 const app = express();
-const host = 3001;
+const port = 3001;
+
+// console.log(__dirname);
+const staticPath = path.join(__dirname, "../public");
+
+app.use(express.static(staticPath));
 
 app.get('/', (req,res)=>{
     res.send ('harekrishna, srilaPrabhupada ki jai!')
@@ -22,6 +28,5 @@ app.get('/neha', (req,res) => {
 
 
 app.listen(3001, ()=> {
-    console.log(`listening to the port${port}`)
+    console.log(`listening to the port no ${port}`);
 });
-

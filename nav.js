@@ -2,8 +2,14 @@ const express = require('express');
 const app = express();
 const port = 3002;
 
+const staticPath = path.join(__dirname, "../public");
+
+app.use(express.static(staticPath));
+
 app.get('/', (req,res) => {
-    res.send('Welcome to my homepage');
+    res.write('<h1>Welcome to my homepage<h1>');
+    res.write(`<h1>welcome to lalalal</h1>`);
+    res.send();
 });
 
 app.get('/about', (req,res)=> {
@@ -15,7 +21,35 @@ app.get('/contact', (req,res) => {
 });
 
 app.get('/temp', (req,res) => {
-    res.send('welcome to my temp page');
+    res.json([{
+        name: 'buggota',
+        model: 2006,
+        tyres: 4,
+        color: `black`,
+        height: 5.2,
+    },
+    {
+        name: 'buggota',
+        model: 2006,
+        tyres: 4,
+        color: `black`,
+        height: 5.2,
+    },
+    {
+        name: 'buggota',
+        model: 2006,
+        tyres: 4,
+        color: `black`,
+        height: 5.2,
+    },
+    {
+        name: 'buggota',
+        model: 2006,
+        tyres: 4,
+        color: `black`,
+        height: 5.2,
+    },
+]);
 });
 
 
