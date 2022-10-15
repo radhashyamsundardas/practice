@@ -4,25 +4,31 @@ const app = express();
 const port = 3001;
 
 // console.log(__dirname);
-const staticPath = path.join(__dirname, "../public");
+const staticPath = path.join(__dirname, "./public");
 
-app.use(express.static(staticPath));
+app.set("view engine", "hbs");
 
-app.get('/', (req,res)=>{
-    res.send ('harekrishna, srilaPrabhupada ki jai!')
-});
-
-app.get('/about', (req,res) =>{
-    res.send('bolo shri shri gaur nitai ki jai');
-});
-
-app.get('/hiren', (req,res)=>{
-    res.send('jai jai shri shri radhashyamsundar ki jai');
-});
-
-app.get('/neha', (req,res) => {
-    res.send('This is all mercy of Shri Shri RadhaShyamsundar');
+app.get("", (req,res)=> {
+    res.render('')
 })
+
+// app.use(express.static(staticPath));
+
+// app.get('/', (req,res)=>{
+//     res.send (' srilaPrabhupada jai!')
+// });
+
+// app.get('/about', (req,res) =>{
+//     res.send('bolo shri shri gaur nitai ki jai');
+// });
+
+// app.get('/hiren', (req,res)=>{
+//     res.send('jai jai shri shri radhashyamsundar ki jai');
+// });
+
+// app.get('/neha', (req,res) => {
+//     res.send('This is all mercy of Shri Shri RadhaShyamsundar');
+// })
 
 
 

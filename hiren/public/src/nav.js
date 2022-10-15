@@ -51,10 +51,3 @@ app.get('/temp', (req,res) => {
     },
 ]);
 });
-
-
-
-
-app.listen('3002',() => {
-    console.log(`listening to the port no ${port}`);
-} );
